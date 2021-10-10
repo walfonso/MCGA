@@ -1,14 +1,24 @@
 const express = require('express');
+
+/* EXPRESS*/
 const app = express();
-const port = 3000;
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 /* MONGOOSE */
 require('./config/db');
+
+/* ROUTES */
+const productRoutes = require('./routes/product');
+
+app.use('/api/product', productRoutes());
 
 app.get('/', (req, res) => {
   res.send('Servidor ok');
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(
+    `DBMarket ~ Online - Running on PORT: ${process.env.PORT || 3000}`
+  );
 });
