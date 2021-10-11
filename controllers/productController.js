@@ -1,4 +1,5 @@
 const Product = require('../models/product');
+
 // Agregar Producto
 exports.addProduct = async (req, res) => {
   try {
@@ -9,6 +10,21 @@ exports.addProduct = async (req, res) => {
 
     await product.save();
     return res.status(200).json(product);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+// Eliminar Poucto Id
+exports.deleteProduct = async (req, res) => {
+  try {
+    const { productId } = req.params;
+    const product = await Product.findByIdAndDelete(productId);
+
+    if (!product) return res.status(400).json('Error al eliminar el Producto.');
+
+    return res.status(200).json('El Producto ha sido eliminado correctamente.');
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: error.message });
