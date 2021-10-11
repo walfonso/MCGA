@@ -1,0 +1,74 @@
+{
+	"id": "e9096910-4f63-2256-64b3-c4c23d383f8c",
+	"name": "DBMarket",
+	"description": "",
+	"order": [
+		"adc8237f-17ca-5f3e-29fa-59828119a69d"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1633908255879,
+	"owner": "17287619",
+	"public": false,
+	"requests": [
+		{
+			"id": "adc8237f-17ca-5f3e-29fa-59828119a69d",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/api/product/",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "e9096910-4f63-2256-64b3-c4c23d383f8c",
+			"data": [
+				{
+					"key": "name",
+					"value": "Taragui",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "price",
+					"value": "230",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "detail",
+					"value": "Yerba mate 1 kg",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category",
+					"value": "Alimento",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "http://localhost:3000/api/product/",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1633908295115,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
