@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "2e17efd4-d7f3-4453-b1df-943414d217c3",
+		"name": "CBM;arket-MCGA-Parcial1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "supplier",
+			"item": [
+				{
+					"name": "getAllSuppliers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/supplier/All",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"supplier",
+								"All"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewSupplier",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Wall Mart\",\r\n    \"email\": \"info@wallmart.com\",\r\n    \"phone\": 3456895221\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/supplier/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"supplier",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSupplier",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"supplierId\": \"616600fdd3bc58093b6b4032\",\r\n    \"name\": \"Wall-Mart\",\r\n    \"email\": \"info@wallmart.com\",\r\n    \"phone\": 3456895221\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/supplier/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"supplier",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSupplier",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/supplier/616600fdd3bc58093b6b4032",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"supplier",
+								"616600fdd3bc58093b6b4032"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSupplierById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/supplier/61660b5faaf89ca98610f2af",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"supplier",
+								"61660b5faaf89ca98610f2af"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
