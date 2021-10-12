@@ -6,7 +6,7 @@ module.exports = () => {
   router.post('/', supplierController.addNewSupplier);
 
   router.get('/all', supplierController.getAllSuppliers);
-  //   router.get('/:supplierId', supplierController.getSupplierById);
+  router.get('/:supplierId', supplierController.getSupplierById);
 
   router.put('/', supplierController.updateSupplier);
 
