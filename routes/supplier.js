@@ -10,7 +10,7 @@ module.exports = () => {
 
   router.put('/', supplierController.updateSupplier);
 
-  //   router.delete('/:supplierId', supplierController.deleteSupplier);
+  router.delete('/:supplierId', supplierController.deleteSupplier);
 
   return router;
 };

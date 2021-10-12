@@ -56,3 +56,24 @@ exports.updateSupplier = async (req, res) => {
 
   }
 };
+
+
+// DELETE A Supplier By ID
+exports.deleteSupplier = async (req, res) => {
+    try {
+      
+      const { supplierId } = req.params;
+  
+      const supplier = await Supplier.findByIdAndDelete(supplierId);
+  
+      if (!supplier) return res.status(400).json('Error eliminando el registro del proveedor.');
+  
+      return res.status(200).json('Registro de proveedor eliminado correctamente.');
+  
+    } catch (error) {
+  
+      console.error(error);
+      return res.status(500).json({ message: error.message });
+  
+    }
+  };
