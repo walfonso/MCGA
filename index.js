@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 /* EXPRESS*/
 const app = express();
@@ -7,6 +8,9 @@ app.use(express.json());
 
 /* MONGOOSE */
 require('./config/db');
+
+/* CORS*/
+app.use(cors());
 
 /* ROUTES */
 const productRoutes = require('./routes/product');
