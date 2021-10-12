@@ -18,4 +18,4 @@ const supplierSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('product', supplierSchema);
+module.exports = mongoose.model('supplier', supplierSchema);

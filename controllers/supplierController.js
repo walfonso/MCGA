@@ -1,1 +1,1 @@
-const Product = require('../models/supplier');
+const Supplier = require('../models/supplier');
