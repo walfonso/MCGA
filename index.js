@@ -7,18 +7,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 /* MONGOOSE */
-require('./config/db');
+require("./config/db");
 
 /* CORS*/
 app.use(cors());
 
 /* ROUTES */
-const productRoutes = require('./routes/product');
+const productRoutes = require("./routes/product");
+const supplierRoutes = require("./routes/supplier");
 
-app.use('/api/product', productRoutes());
+app.use("/api/product", productRoutes());
+app.use("/api/supplier", supplierRoutes());
 
-app.get('/', (req, res) => {
-  res.send('Servidor ok');
+app.get("/", (req, res) => {
+  res.send("Servidor ok");
 });
 
 app.listen(process.env.PORT || 3000, () => {
