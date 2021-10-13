@@ -14,8 +14,11 @@ app.use(cors());
 
 /* ROUTES */
 const productRoutes = require('./routes/product');
+const clientRoutes = require('./routes/client');
 
 app.use('/api/product', productRoutes());
+
+app.use('/api/client', clientRoutes());
 
 app.get('/', (req, res) => {
   res.send('Servidor ok');
