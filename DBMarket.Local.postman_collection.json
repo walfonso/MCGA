@@ -1,0 +1,211 @@
+{
+	"id": "091b24a9-9c20-20f9-e62e-cf0b02ded2de",
+	"name": "DBMarket.Local",
+	"description": "",
+	"order": [
+		"d94349a9-5ec2-46ad-7b9e-631885ba4b4c",
+		"55e5a117-9dd0-a3b2-2e15-3ca3285f3a87",
+		"05fba399-4b33-bcee-fe07-10972ec07b69",
+		"4c2be937-6818-6eff-6eec-9ebf80667a58",
+		"3eb9c6fa-c8e0-2838-f333-8295129c51d4"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1633927131869,
+	"owner": "17287619",
+	"public": false,
+	"requests": [
+		{
+			"id": "05fba399-4b33-bcee-fe07-10972ec07b69",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/api/product/",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "PUT",
+			"collectionId": "091b24a9-9c20-20f9-e62e-cf0b02ded2de",
+			"data": [
+				{
+					"key": "productId",
+					"value": "616375afc5a3f48aa4cf89e2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "Chango Max",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "price",
+					"value": "80.50",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "detail",
+					"value": "Azucar Negra",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category",
+					"value": "Alimentos",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "http://localhost:3000/api/product/",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1633928239930,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "3eb9c6fa-c8e0-2838-f333-8295129c51d4",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/api/product/616375afc5a3f48aa4cf89e2",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "091b24a9-9c20-20f9-e62e-cf0b02ded2de",
+			"data": [],
+			"dataMode": "params",
+			"name": "getProductById",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1633929156888,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "4c2be937-6818-6eff-6eec-9ebf80667a58",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/api/product/all",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "091b24a9-9c20-20f9-e62e-cf0b02ded2de",
+			"data": [],
+			"dataMode": "params",
+			"name": "getAllProducts",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1633929075348,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "55e5a117-9dd0-a3b2-2e15-3ca3285f3a87",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/api/product/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Taragui",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "price",
+					"value": "230",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "detail",
+					"value": "Yerba mate 1 kg",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category",
+					"value": "Alimento",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1633927406507,
+			"name": "http://localhost:3000/api/product/",
+			"description": "",
+			"collectionId": "091b24a9-9c20-20f9-e62e-cf0b02ded2de",
+			"responses": []
+		},
+		{
+			"id": "d94349a9-5ec2-46ad-7b9e-631885ba4b4c",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/api/product/61638068071ede514a35cdf5",
+			"folder": "83cc67ed-957b-79f2-dc33-999472828096",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1633928290526,
+			"name": "http://localhost:3000/api/product/",
+			"description": "",
+			"collectionId": "091b24a9-9c20-20f9-e62e-cf0b02ded2de",
+			"responses": []
+		}
+	]
+}
