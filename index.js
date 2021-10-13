@@ -13,11 +13,13 @@ require('./config/db');
 app.use(cors());
 
 /* ROUTES */
+
 const productRoutes = require('./routes/product');
+const supplierRoutes = require('./routes/supplier');
 const clientRoutes = require('./routes/client');
 
 app.use('/api/product', productRoutes());
-
+app.use('/api/supplier', supplierRoutes());
 app.use('/api/client', clientRoutes());
 
 app.get('/', (req, res) => {
