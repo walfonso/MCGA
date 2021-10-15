@@ -20,11 +20,11 @@ exports.addClient = async (req, res) => {
 exports.updateClient = async (req, res) => {
   try {
     const body = req.body;
+    const clientId = req.params.clientId;
 
-    if (!body.clientId)
-      return res.status(400).json('No existe cliente con ese Id.');
+    if (!clientId) return res.status(400).json('No existe cliente con ese Id.');
 
-    const client = await Client.findByIdAndUpdate(body.clientId, body, {
+    const client = await Client.findByIdAndUpdate(clientId, body, {
       new: true,
     });
 
