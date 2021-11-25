@@ -30,25 +30,22 @@ exports.getAllSuppliers = async (req, res) => {
   }
 };
 
-
 // GET A Supplier By ID
 exports.getSupplierById = async (req, res) => {
   try {
-
     const { supplierId } = req.params;
 
     const supplier = await Supplier.findById(supplierId);
 
     if (!supplier)
-      return res.status(400).json('No existe registro de un proveedor con ese Id.');
+      return res
+        .status(400)
+        .json('No existe registro de un proveedor con ese Id.');
 
     return res.status(200).json(supplier);
-
   } catch (error) {
-
     console.error(error);
     return res.status(500).json({ message: error.message });
-
   }
 };
 
@@ -56,13 +53,13 @@ exports.getSupplierById = async (req, res) => {
 exports.updateSupplier = async (req, res) => {
   try {
     const body = req.body;
-
-    if (!body.supplierId)
+    const supplierId = req.params.supplierId;
+    if (!supplierId)
       return res
         .status(400)
         .json('No existe el Id especificado del proveedor.');
 
-    const supplier = await Supplier.findByIdAndUpdate(body.supplierId, body, {
+    const supplier = await Supplier.findByIdAndUpdate(supplierId, body, {
       new: true,
     });
 

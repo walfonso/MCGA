@@ -8,7 +8,7 @@ module.exports = () => {
   router.get('/all', supplierController.getAllSuppliers);
   router.get('/:supplierId', supplierController.getSupplierById);
 
-  router.put('/', supplierController.updateSupplier);
+  router.put('/:supplierId', supplierController.updateSupplier);
 
   router.delete('/:supplierId', supplierController.deleteSupplier);
 

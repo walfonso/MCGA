@@ -35,11 +35,12 @@ exports.deleteProduct = async (req, res) => {
 exports.updateProduct = async (req, res) => {
   try {
     const body = req.body;
+    const productId = req.params.productId;
 
-    if (!body.productId)
+    if (!productId)
       return res.status(400).json('No existe Producto con ese Id.');
 
-    const product = await Product.findByIdAndUpdate(body.productId, body, {
+    const product = await Product.findByIdAndUpdate(productId, body, {
       new: true,
     });
 
