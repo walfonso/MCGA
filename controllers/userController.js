@@ -1,4 +1,85 @@
 const User = require("../models/user");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const messages = require("../utils/messages");
+
+//const messages = require("../utils/messages");
+//const { messageGeneral } = messages;
+
+// Login
+
+exports.login = async (req, res) => {
+  try {
+    const data = req.body;
+    const resp = await User.findOne({ email: data.email });
+    if (!resp) {
+      return messages.messageGeneral(
+        res,
+        400,
+        false,
+        "",
+        "El correo no existe"
+      );
+    }
+    const match = await bcrypt.compare(data.password, resp.password);
+    if (match) {
+      //Crear token
+      const token = jwt.sign({ _id: resp.id }, "produccion");
+      return messages.messageGeneral(
+        res,
+        201,
+        true,
+        { ...resp._doc, password: null, token },
+        "Bienvenido"
+      );
+    }
+    messages.messageGeneral(res, 400, false, "", "La contraseña es incorrecta");
+  } catch (error) {
+    messages.messageGeneral(res, 500, false, "", error.message);
+  }
+};
+//
+
+//register user
+exports.addUser = async (req, res) => {
+  try {
+    const data = req.body;
+    //Verificar correo
+    const resp = await User.findOne({ email: data.email });
+    if (resp) {
+      return messages.messageGeneral(res, 400, false, "", "El correo ya existe");
+    }
+    // encriptar password
+    data.password = await bcrypt.hash(data.password, 10);
+    const newUser = await User.create(data);
+    const token = jwt.sign({ _id: newUser.id }, "produccion");
+    messages.messageGeneral(
+      res,
+      201,
+      true,
+      { ...newUser._doc, password: null, token },
+      "Usuario creado correctamente"
+    );
+  } catch (error) {
+    return messages.messageGeneral(res, 500, false, "", error.message);
+  }
+};
+//
+
+// Agregar Usuario
+// exports.addUser = async (req, res) => {
+//   try {
+//     const body = req.body;
+//     const user = new User(body);
+//     if (!user) return res.status(400).json("Error al crear el Usuario.");
+//     await user.save();
+//     return res.status(200).json(user);
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ message: error.message });
+//   }
+// };
+
 
 // Obtener todos los Usuarios
 exports.getAllUsers = async (req, res) => {
@@ -14,19 +95,7 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
-// Agregar Usuario
-exports.addUser = async (req, res) => {
-  try {
-    const body = req.body;
-    const user = new User(body);
-    if (!user) return res.status(400).json("Error al crear el Usuario.");
-    await user.save();
-    return res.status(200).json(user);
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: error.message });
-  }
-};
+
 
 // Actualizar Usuario
 exports.updateUser = async (req, res) => {
