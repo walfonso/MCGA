@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-require('dotenv').config({ path: '.env' });
+require("dotenv").config({ path: ".env" });
 
 mongoose
   .connect(process.env.MONGO_URI, { UseNewUrlParser: true })
