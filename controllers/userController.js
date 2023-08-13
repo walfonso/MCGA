@@ -32,7 +32,7 @@ exports.addUser = async (req, res) => {
 exports.updateUser = async (req, res) => {
   try {
     const body = req.body;
-    const usertId = req.params.userId;
+    const userId = req.params.userId;
     if (!userId) return res.status(400).json("No existe Usuario con ese Id.");
     const user = await User.findByIdAndUpdate(userId, body, {
       new: true,
