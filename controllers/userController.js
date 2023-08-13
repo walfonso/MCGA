@@ -17,7 +17,7 @@ exports.getAllUsers = async (req, res) => {
 };
 
 
-// Agregar User
+// Agregar Usuario
 exports.addUser = async (req, res) => {
     try {
         const body = req.body;
@@ -33,7 +33,7 @@ exports.addUser = async (req, res) => {
     }
 };
 
-// Actualizar Cliente
+// Actualizar Usuario
 exports.updateUser = async (req, res) => {
     try {
         const body = req.body;
@@ -54,7 +54,7 @@ exports.updateUser = async (req, res) => {
     }
 };
 
-// Eliminar Cliente
+// Eliminar Usuario
 exports.deleteUser = async (req, res) => {
     try {
         const { userId } = req.params;
@@ -69,7 +69,7 @@ exports.deleteUser = async (req, res) => {
     }
 };
 
-// Obtener cliente por id
+// Obtener Usuario por id
 exports.getUserById = async (req, res) => {
     try {
         const { userId } = req.params;
