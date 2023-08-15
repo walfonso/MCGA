@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const messages = require("../utils/messages");
 
-// Login
+// Login users
 exports.login = async (req, res) => {
   try {
     const data = req.body;
