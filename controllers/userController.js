@@ -3,11 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const messages = require("../utils/messages");
 
-//const messages = require("../utils/messages");
-//const { messageGeneral } = messages;
-
 // Login
-
 exports.login = async (req, res) => {
   try {
     const data = req.body;
@@ -38,7 +34,6 @@ exports.login = async (req, res) => {
     messages.messageGeneral(res, 500, false, "", error.message);
   }
 };
-//
 
 //register user
 exports.addUser = async (req, res) => {
@@ -47,7 +42,13 @@ exports.addUser = async (req, res) => {
     //Verificar correo
     const resp = await User.findOne({ email: data.email });
     if (resp) {
-      return messages.messageGeneral(res, 400, false, "", "El correo ya existe");
+      return messages.messageGeneral(
+        res,
+        400,
+        false,
+        "",
+        "El correo ya existe"
+      );
     }
     // encriptar password
     data.password = await bcrypt.hash(data.password, 10);
@@ -64,22 +65,6 @@ exports.addUser = async (req, res) => {
     return messages.messageGeneral(res, 500, false, "", error.message);
   }
 };
-//
-
-// Agregar Usuario
-// exports.addUser = async (req, res) => {
-//   try {
-//     const body = req.body;
-//     const user = new User(body);
-//     if (!user) return res.status(400).json("Error al crear el Usuario.");
-//     await user.save();
-//     return res.status(200).json(user);
-//   } catch (error) {
-//     console.error(error);
-//     return res.status(500).json({ message: error.message });
-//   }
-// };
-
 
 // Obtener todos los Usuarios
 exports.getAllUsers = async (req, res) => {
@@ -94,8 +79,6 @@ exports.getAllUsers = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
-
-
 
 // Actualizar Usuario
 exports.updateUser = async (req, res) => {
